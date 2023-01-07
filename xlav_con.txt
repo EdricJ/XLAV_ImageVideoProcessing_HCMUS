@@ -1,0 +1,18 @@
+tuần 7
+6/ Vì sao lấy xấp xỉ 3 cặp, nhiều cặp? 
+17/ Xấp xỉ toán tử Laplace cho miền rời rạc. Sau khi chập thì chúng ta có gì? 
+27/ Tại sao dùng phương pháp Laplace, ta lại dễ bị phát hiện biên kép. 
+30/ Vì sao lại đưa 1 quan niệm toán mới vô để làm gì? 
+
+tuần 8
+2/ Định lý thứ 2 dòng thứ 2 dùng để làm gì? 
+3/ Viết các hàm để bắn độ nhiễu vào trong ảnh
+12/ Cách phát hiện được đường tròn? 
+13/ Phân tích độ phức tạp tính toán của phát hiện đường thẳng, đường tròn 
+
+tuần 9
+1/ Tìm ai?
+3/ Cho tập m ảnh -> phân tích thành phần chính 
+4/ Định logic vị từ để kết nạp Ri(k) 
+5/ Trong quá trình kết nạp 1 điểm mới vô, tính trung bình cộng lại từ đầu công thức quy nạp 
+ 

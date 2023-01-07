@@ -1,0 +1,20 @@
+Động lực nghiên cứu
+	- Theo dõi bàn tay trên thiết bị theo thời gian thực, dự đoán khung xương bàn tay từ camera RGB đơn cho các ứng dụng AR/VR
+	- Tại sao cần nghiên cứu Hand detection and Finger Pose Estimation? 
+		Khi nghiên cứu thành công Hand detection and Finger Pose Estimation, ta sẽ ứng dụng được trong việc giao tiếp giữa người - máy
+		và người - người, thêm một lựa chọn dùng hành động và cử chỉ của bàn tay, các khớp ngón tay cho phương thức giao tiếp và kết 
+		nối các đối tượng trong thế giới với nhau ngoài lựa chọn dùng ngôn ngữ để giao tiếp.
+	- Giải quyết vấn đề trong thực tế, trong đời sống xã hội
+		Có thể cải thiện được việc truyền đạt thông tin, giao tiếp nhanh chóng ở một khoảng cách khá xa, khi mà ngôn ngữ thể hiện mặt
+		hạn chế của nó.
+		Giúp việc truyền đạt, giao tiếp được dễ dàng hơn đối với những người có tật bẩm sinh về khiếm thính, khuyết tật ngôn ngữ
+		Phát hiện sớm các bệnh dị tật về tay, các tai nạn có liên quan đến xương khớp ở bàn tay để giúp bác sĩ dựa vào nghiên cứu khoa
+		học này để đưa ra được các chẩn đoán chính xác
+		Nhận diện được, phát hiện sớm các đối tượng có hành vi khả nghi, bất thường (khủng bố, tấn công ở đám đông, bắt cóc con tin,...)
+		Giao tiếp giữa người với máy được dễ dàng hơn thông qua các hành động, cử chỉ ngón tay, bàn tay của người dùng (chỉ hướng cho
+		các robot di chuyển theo)
+	- Đóng góp lớn hơn ở một nghiên cứu về việc phát triển cảnh sát robot trong việc bảo vệ và giám sát an ninh, chống các đối tượng tội
+	phạm (nhận diện được kí hiệu thông qua bàn tay của tội phạm khi chúng ta ra dấu cho đồng bọn, nhận diện cử chỉ khi chúng dùng vũ khí 
+	(khi chúng bắt cóc con tin) từ đó có thể đưa ra mức độ phạm tội của tội phạm này để báo động đến lực lượng cảnh sát tập trung nhiều 
+	hơn để đột kích, báo động đến mọi người ở khu vực xung quanh gần đó)
+		

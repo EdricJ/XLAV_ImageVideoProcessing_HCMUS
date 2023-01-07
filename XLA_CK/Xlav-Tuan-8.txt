@@ -1,0 +1,69 @@
+(b)
+Định lý convolution để giải các bài toán liên quan đến phép tích chập của 2 hàm số và phép biến đổi Fourier của chúng, thông qua đó ta có thể tìm ra Kernel mong muốn, cũng như dự đoán kết quả của ảnh khi áp dụng Kernel (lọc nhiễu, làm mờ, phát hiện cạnh,...)
+
+(c)
+Đối với mỗi pixel : O(n^2)
+Đối với cả bức ảnh n*n : O(n^4)
+
+(d)
+Độ phức tạp thời gian của thuật toán Fourier đối với hàm 1 biến: O(n^2)
+
+(e)
+Dòng 2 của định lý Convolution (slide 19):
+	Phép biến đổi Fourier của tích 2 hàm số bằng phép chập (Convolution) của biến đổi Fourier của 2 hàm số 
+
+(f)
+
+(g) 
+H là hàm lọc nhiễu
+
+(h) 
+Lowpass filter loại bỏ các tần số thấp hơn D0 ở miền tần số, kết quả là những nơi có sự thay đổi đột ngột trong greyscale được "san phẳng", đem lại kết quả tương từ quá trình làm mờ ảnh hay làm trơn ảnh, giúp lọc nhiễu ảnh.
+
+(i) 
+Giảm D0 thì ảnh càng sắc nét và sát với ảnh gốc
+Tăng D0 thì ảnh càng mờ, càng trơn
+
+(j)
+Trong miền tần số, do việc có sự cắt đứt gãy gọn (Butterworth tạo ra hình cái chuông giống như phân bố xác suất chuẩn), Ideal Lowpass Filter khi áp dụng lên ảnh gây ra đốm và vân ảnh không mong muốn. Ngược lại, Butterworth làm mờ ảnh một cách "mượt" hơn
+
+(k) 
+D0 càng lớn thì ảnh cảng trở nên mờ, các chi tiết trong ảnh càng pha trộn với nhau hơn, các đường nét, góc cạnh càng trở nên mờ nhạt và không rõ ràng
+
+D0 càng bé thì hiệu ứng làm mờ càng giảm, ảnh càng sát với ảnh gốc
+
+(l)
+Không lọc được trong miền không gian vì ảnh bị làm nhiễu bởi nhiều yếu tố khác nhau (không chỉ theo mô hình Guassian)
+
+
+(n)
+
+
+(o)
+Highpass filter loại bỏ tần số thấp hơn D0 trong ảnh ở miền tần số, nên các nhiễu ở tần số thấp (các nhiễu có sự chênh lệnh ít trong greyscale) bị loại bỏ.
+
+(p)
+D0 càng lớn, lượng tần số bị loại bỏ càng nhiều, biên cạnh lấy được càng rõ nét, nhưng số lượng bien cạnh lấy được giảm
+
+(q)
+Ảnh lấy được không bị đốm, không xuất hiện các vân khi dùng hàm Butterworth (so với Ideal Highpass filter)
+
+(r)
+Lọc trong miền không gian: áp bộ lọc trực tiếp lên ảnh gốc
+Lọc trong miền tần số: biến đổi ảnh thành ảnh tần số bằng phép biến đổi Fourier, áp dụng bộ lọc, rồi biến đổi ảnh tần số ngược lại bằng phép biến đổi Fourier ngược
+
+(s)
+Bước 1: Áp dùng thuật toán phát hiện biên cạnh lên ảnh gốc (f) tạo ảnh biên cạnh (g)
+Bước 2: Xét các bán kính đường tròn R (1 <= R < N), với mỗi điểm sáng trên ảnh g
+Bước 3: Tại mỗi pixel sáng (xi, yi) trên ảnh g, trên một tấm ảnh đen mới tương ứng (hR), tăng độ sáng của các pixel nằm trên đường tròn tâm (xi, yi) trên ảnh hR, bán kính R thêm một lượng xác định
+Bước 4: Các điểm sáng nhất trên ảnh g sẽ là tâm của một đường tròn có bán kính R trên ảnh g.
+Bước 5: lặp lại bước 2 với R = R + 1
+
+(t)
+Quét toàn bộ bức ảnh: O(n^2)
+Xét các bán kính từ 1 đến N: O(n)
+Trên 1 pixel, chạy một đường tròn: O(n)
+Tổng: O(n^4)
+
+
+

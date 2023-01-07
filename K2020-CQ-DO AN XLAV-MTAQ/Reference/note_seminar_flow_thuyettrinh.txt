@@ -1,0 +1,61 @@
+Nhận thấy rằng mọi thế tay, cử chỉ ở bàn tay của con người đều mang một thông tin và nguồn thông tin đó có ở khắp mọi nơi.
+Nhận diện được nguồn thông tin đó sẽ giúp chúng ta có đc nhiều thêm các loại thông tin.
+
+Ứng dụng ở việc điều khiển các thiết bị điện tử từ xa (chụp hình từ xa, điều khiển drone, ...)
+Tái tạo lại hình ảnh 3D của bàn tay trong môi trường ảo
+
+Ý nghĩa khoa học:
+Bài toán giải quyết -> nhận diện tay, bàn tay, các ngón tay trong 1 tấm ảnh
+Khử nhiễu được tấm ảnh có bàn tay (khi mà phát hiện biên cạnh bàn tay)
+Giữ nguyên được các đặc trưng cơ bản của bàn tay trong các mô hình
+
+- Tại sao cần nghiên cứu Hand detection and Finger Pose Estimation? 
+		Khi nghiên cứu thành công Hand detection and Finger Pose Estimation, ta sẽ ứng dụng được trong việc giao tiếp giữa người - máy
+		và người - người, thêm một lựa chọn cho phương thức giao tiếp và kết  nối các đối tượng trong thế giới với nhau ngoài lựa chọn 
+		dùng ngôn ngữ để giao tiếp là dùng hành động và cử chỉ của bàn tay, các khớp ngón tay .
+
+Bối cảnh có thể nói thêm:
+- Giải quyết vấn đề trong thực tế, trong đời sống xã hội
+		Có thể cải thiện được việc truyền đạt thông tin, giao tiếp nhanh chóng ở một khoảng cách khá xa, khi mà ngôn ngữ thể hiện mặt
+		hạn chế của nó.
+		Giúp việc truyền đạt, giao tiếp được dễ dàng hơn đối với những người có tật bẩm sinh về khiếm thính, khuyết tật ngôn ngữ
+		Phát hiện sớm các bệnh dị tật về tay, các tai nạn có liên quan đến xương khớp ở bàn tay để giúp bác sĩ dựa vào nghiên cứu khoa
+		học này để đưa ra được các chẩn đoán chính xác
+		Nhận diện được, phát hiện sớm các đối tượng có hành vi khả nghi, bất thường (khủng bố, tấn công ở đám đông, bắt cóc con tin,...)
+		Giao tiếp giữa người với máy được dễ dàng hơn thông qua các hành động, cử chỉ ngón tay, bàn tay của người dùng (chỉ hướng cho
+		các robot di chuyển theo)
+	- Đóng góp lớn hơn ở một nghiên cứu về việc phát triển cảnh sát robot trong việc bảo vệ và giám sát an ninh, chống các đối tượng tội
+	phạm (nhận diện được kí hiệu thông qua bàn tay của tội phạm khi chúng ta ra dấu cho đồng bọn, nhận diện sớm được cử chỉ khi chúng dùng vũ khí 
+	(khi chúng bắt cóc con tin) từ đó có thể đưa ra mức độ phạm tội của tội phạm này để báo động đến lực lượng cảnh sát tập trung nhiều 
+	hơn để đột kích, báo động đến mọi người ở khu vực xung quanh gần đó)
+
+
+Problem statement:
+bài toán nhận diện được bàn tay và các điểm neo -> ứng dụng vào việc nhận diện các hành động của nó
+
+đầu tiên, input bài toán là ảnh hoặc dãy ảnh màu, sau đó qua các khâu tiền xử lý ảnh, ta có thể làm mờ, lọc nhiễu, tiến hành chuyển sang ảnh
+trắng đen để có thể phát hiện biên cạnh -> làm nổi bật lên hình dáng bàn tay trong bức ảnh.
+
+nhờ vậy, ta đóng được bao bounding box để xác định đúng đối tượng cần xử lý trong bức ảnh, xác định các điểm neo trên bàn tay rồi từ đó đưa vào
+nhận diện các cử chỉ ở bàn tay
+cuối cùng ta nhận output đó chính là ngữ nghĩa, ý nghĩa của hành động đã được phân tích từ cử chỉ của bàn tay đó.
+
+
+Framework:
+Đầu tiên là tấm ảnh bàn tay đưa vào (là ảnh màu hoặc không phải là ảnh màu)
+Trải qua khâu tiền xử lý ảnh -> rút trích được đặc trưng là bàn tay
+	phát hiện biên cạnh ứng dụng phương pháp canny gì gì đó...
+	nhận diện bàn tay theo màu da, nếu da đen thì chuyển về màu da gì gì đó... (skin color detection)
+	phân vùng tay để khác biệt so với các ảnh khác trong bức ảnh
+Trải qua khâu gì gì đó
+	Đóng bao bounding box phát hiện đối tượng trong bức ảnh
+	tô viền hoặc tô màu đối tượng đã được xác định
+	đóng bao viền chính xác vào đổi tượng (dùng phương pháp Hough gì gì đó...)
+Xử lý các hình ảnh có tay khó phát hiện
+	hướng đặt của bàn tay không còn dễ phát hiện (xiên, xéo, lật lại,...)
+	ảnh bị chói sáng, không còn thấy bàn tay
+
+Challenge:
+	phụ thuộc vào độ chiếu sáng khi sử dụng skin color detection
+	điều kiện hạn chế nên không có các máy móc hiện đại, chuyên dùng để thu các ảnh đầu vào
+	Tập huấn luyện và tập dữ liệu bên ngoài thực tế không giống nhau dẫn đến việc sẽ mất đi tính hiệu quả khi nhận diện bàn tay
