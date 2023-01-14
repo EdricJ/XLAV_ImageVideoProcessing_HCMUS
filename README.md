@@ -6,6 +6,14 @@ Links:
 
 - https://acrobat.adobe.com/link/review?uri=urn%3Aaaid%3Ascds%3AUS%3A2ea794ed-75fa-390e-855c-efa740cfe33a&fbclid=IwAR16Oliht84bBI1-56m4rB_yT3cbwHntkAS7NqWPb4cNB2uG8o7TVS8-0Tw
 
+- https://github.com/hmhuan/HCMUS_HK5_XLAV
+
+- https://github.com/huskarit99/Image_Processing_HCMUS
+
+- https://github.com/Belval/TextRecognitionDataGenerator
+
+- 
+
 
 Reference link for the final exam
 - http://khoahoccoban.saodo.edu.vn/nghien-cuu-khoa-hoc/phep-bien-doi-fourier-va-ung-dung-75.html
